@@ -4,7 +4,7 @@ import './App.css';
 
 
 // import js files
-import LoadCountries from './components/LoadCountries/LoadCountries';
+import LoadCountries from './components/Countries/LoadCountries';
 import Header from './components/Header/Header';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
         <div className = "App">
           <Header></Header>
           <LoadCountries> </LoadCountries>  
+          
         </div>
     );
 }

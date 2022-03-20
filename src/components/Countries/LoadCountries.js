@@ -4,13 +4,22 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 
 
-// import other react components
+// import css file
+import './LoadCountries.css';
+
+
+// import other js components
 import Country from '../Country/Country';
+
+
+
 
 const LoadCountries = () => {
       const [countries, setCountries] = useState ([]);
 
   useEffect ( () => {
+
+      // calling api from internet
     fetch ('https://restcountries.com/v3.1/all')
     .then(res => res.json())
     .then(data => setCountries(data));

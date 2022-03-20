@@ -1,4 +1,8 @@
+// import core files
 import React from 'react';
+
+// import css file
+import './Country.css';
 
 const Country = (props) => {
       return (
