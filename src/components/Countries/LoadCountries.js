@@ -1,4 +1,3 @@
-
 // core react import
 import React from 'react';
 import { useEffect, useState } from 'react';
@@ -15,26 +14,34 @@ import Country from '../Country/Country';
 
 
 const LoadCountries = () => {
-      const [countries, setCountries] = useState ([]);
+        const [countries, setCountries] = useState([]);
 
-  useEffect ( () => {
+        useEffect(() => {
 
-      // calling api from internet
-    fetch ('https://restcountries.com/v3.1/all')
-    .then(res => res.json())
-    .then(data => setCountries(data));
-  }, 
-  
-  []);
-      return (
-            <div>
-                  <h1>Every country of the world </h1> 
-                  <p>Total countries here: {countries.length}</p> 
-                  {
-                  countries.map(country => <Country name= {country.name.common} population= {country.population}></Country> )
-                  }
-            </div>
-      );
-};
+                // calling api from internet
+                fetch('https://restcountries.com/v3.1/all')
+                    .then(res => res.json())
+                    .then(data => setCountries(data));
+            },
 
-export default LoadCountries;
+            []);
+        return ( <div>
+            <h1> Every country of the world </h1>  
+            <p > Total countries here: { countries.length } </p>  
+            <div className = 'loadCountries' > {
+                countries.map(country => < Country country = { country }
+                    key = { country.cca3 }
+                    // name= {country.name.common} 
+                    // population= {country.population}
+                    // area = {country.area}
+                    >
+                    </Country> )
+                }
+
+                </div>
+
+                </div>
+            );
+        };
+
+        export default LoadCountries;
